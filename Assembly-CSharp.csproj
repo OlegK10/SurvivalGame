@@ -57,13 +57,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Config\Bootstrapper.cs" />
-    <Compile Include="Assets\Event\Unit\PlayerEvent.cs" />
-    <Compile Include="Assets\Classes\Player\Player.cs" />
-    <Compile Include="Assets\Classes\Player\PlayerManager.cs" />
     <Compile Include="Assets\Classes\TangibleObjects\Guns\UnifyClasses\Gun.cs" />
     <Compile Include="Assets\Classes\TangibleObjects\Guns\Enum\CartridgeData.cs" />
-    <Compile Include="Assets\Classes\TangibleObjects\Guns\Enum\ScopeData.cs" />
+    <Compile Include="Assets\Event\Unit\PlayerEvent.cs" />
     <Compile Include="Assets\Classes\TangibleObjects\Guns\Pistols\Glock17.cs" />
+    <Compile Include="Assets\Classes\TangibleObjects\Guns\Enum\ScopeData.cs" />
+    <Compile Include="Assets\Classes\Player\PlayerManager.cs" />
+    <Compile Include="Assets\Classes\Player\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

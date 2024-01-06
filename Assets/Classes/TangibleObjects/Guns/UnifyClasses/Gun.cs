@@ -5,6 +5,8 @@ public abstract class Gun : MonoBehaviour
 {
     public string Name { get; set; }
     public int Damage { get; set; }
+
+    public GameObject CartridgeObject { get; set; }
     public int CurrentCartridgesCount { get; set; }
     public int MaxCartridgesCountInMagazine { get; set; }
     public float CartridgeSpeed { get; set; }
@@ -19,42 +21,39 @@ public abstract class Gun : MonoBehaviour
     public float TimeToDecreaseSpread { get; set; }
     public float CurrentSpreadRadius { get; set; }
 
-    public float FireRate { get; set; }
+    public float Recoil { get; set; }
     public ScopeData.Types[] EnabledScope { get; set; }
 
-    private bool IsReloading { get; set; }
-    private bool IsShootIntervalWait { get; set; }
+    private bool IsReloading = false;
+    private bool IsShootIntervalWait = false;
 
-    public void Shoot(int? cartridgesByShoot)
+
+    public void Shoot()
     {
         if (CanShoot())
         {
-            Vector3 gunFireRatePos = gameObject.transform.position;
-            gunFireRatePos.y = FireRate;
-            gameObject.transform.position = gunFireRatePos;
-
             StartCoroutine(FireRateProcess());
-            CurrentCartridgesCount -= cartridgesByShoot ?? 1;
+            CurrentCartridgesCount--;
             CurrentSpreadRadius = Mathf.Lerp(MinSpreadRadius, MaxSpreadRadius, TimeToIncreaseSpread);
+            Debug.Log(CurrentCartridgesCount);
         }
-        else
-        {
-            CurrentSpreadRadius = Mathf.Lerp(MaxSpreadRadius, MinSpreadRadius, TimeToDecreaseSpread);
-        }
+        CurrentSpreadRadius = Mathf.Lerp(MaxSpreadRadius, MinSpreadRadius, TimeToDecreaseSpread);
     }
 
-    public void Reload()
+    public void Reload() //check if exist in inventory
     {
         if (CanReload())
         {
             IsReloading = true;
             StartCoroutine(ReloadProcess());
+            Debug.Log("REOLAD --" + CurrentCartridgesCount);
         }
+
     }
 
     private bool CanShoot()
     {
-        return IsShootIntervalWait && CurrentCartridgesCount > 0 && !IsReloading;
+        return !IsShootIntervalWait && CurrentCartridgesCount > 0 && !IsReloading;
     }
 
     private bool CanReload()
@@ -64,9 +63,9 @@ public abstract class Gun : MonoBehaviour
 
     private IEnumerator FireRateProcess()
     {
-        IsShootIntervalWait = false;
-        yield return new WaitForSeconds(ShootInterval);
         IsShootIntervalWait = true;
+        yield return new WaitForSeconds(ShootInterval);
+        IsShootIntervalWait = false;
     }
 
     private IEnumerator ReloadProcess()
