@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Classes\Player\Player.cs" />
+    <Compile Include="Assets\Event\Unit\PlayerEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

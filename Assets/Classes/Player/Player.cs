@@ -4,64 +4,74 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Health { get; private set; }
-    public int MaxHealth { get; private set; }
-    public int Speed { get; private set; }
-    public int Thirst { get; private set; }
-    public int Hunger { get; private set; }
-    public int Energy { get; private set; }
-    public bool IsPoisoned { get; private set; }
-    public bool IsInfected { get; private set; }
+    private int health;
+    private int maxHealth;
+    private int speed;
+    private int thirst;
+    private int hunger;
+    private int energy;
+    private bool isPoisoned;
+    private bool isInfected;
 
-    public Player(int health, int speed, int thirst, int hunger, int energy)
+    public Player(int health, int speed, int thirst, int hunger, int energy, int maxHealth)
     {
         Health = health;
         Speed = speed;
         Thirst = thirst;
         Hunger = hunger;
+        MaxHealth = maxHealth;
         Energy = energy;
         IsPoisoned = false;
         IsInfected = false;
     }
 
-
-    public void TakeDamage(int damage)
+    public int Health
     {
-        Health -= damage;
+        get { return health; }
+        private set { health = value; }
     }
 
-    public void Heal(int amount)
+    public int MaxHealth
     {
-        Health = Mathf.Min(Health + amount, MaxHealth);
+        get { return maxHealth; }
+        private set { maxHealth = value; }
     }
 
-    public void ChangeSpeed(int amount)
+    public int Speed
     {
-        Speed = amount;
+        get { return speed; }
+        private set { speed = value; }
     }
 
-    public void ChangeThirst(int amount)
+    public int Thirst
     {
-        Thirst = amount;
+        get { return thirst; }
+        private set { thirst = value; }
     }
 
-    public void ChangeHunger(int amount)
+    public int Hunger
     {
-        Hunger = amount;
+        get { return hunger; }
+        private set { hunger = value; }
     }
 
-    public void ChangeEnergy(int amount)
+    public int Energy
     {
-        Energy = amount;
+        get { return energy; }
+        private set { energy = value; }
     }
 
-    public void ChangePoisoned(bool value)
+    public bool IsPoisoned
     {
-        IsPoisoned = value;
+        get { return isPoisoned; }
+        private set { isPoisoned = value; }
     }
 
-    public void ChangeInfected(bool value)
+    public bool IsInfected
     {
-        IsInfected = value;
+        get { return isInfected; }
+        private set { isInfected = value; }
     }
+
+
 }
