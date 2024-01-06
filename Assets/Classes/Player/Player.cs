@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
         IsInfected = false;
     }
 
+
     public void TakeDamage(int damage)
     {
         Health -= damage;
