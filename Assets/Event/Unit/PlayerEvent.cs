@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitEvent : MonoBehaviour
+public class PlayerEvent : MonoBehaviour
 {
-    private Player player;
     
 }

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class Player : MonoBehaviour
+public class Player
 {
     private int health;
     private int maxHealth;
@@ -12,6 +10,54 @@ public class Player : MonoBehaviour
     private int energy;
     private bool isPoisoned;
     private bool isInfected;
+
+    public int Health
+    {
+        get { return health; }
+        set { health = value; }
+    }
+
+    public int MaxHealth
+    {
+        get { return maxHealth; }
+        set { maxHealth = value; }
+    }
+
+    public int Speed
+    {
+        get { return speed; }
+        set { speed = value; }
+    }
+
+    public int Thirst
+    {
+        get { return thirst; }
+        set { thirst = value; }
+    }
+
+    public int Hunger
+    {
+        get { return hunger; }
+        set { hunger = value; }
+    }
+
+    public int Energy
+    {
+        get { return energy; }
+        set { energy = value; }
+    }
+
+    public bool IsPoisoned
+    {
+        get { return isPoisoned; }
+        set { isPoisoned = value; }
+    }
+
+    public bool IsInfected
+    {
+        get { return isInfected; }
+        set { isInfected = value; }
+    }
 
     public Player(int health, int speed, int thirst, int hunger, int energy, int maxHealth)
     {
@@ -24,54 +70,4 @@ public class Player : MonoBehaviour
         IsPoisoned = false;
         IsInfected = false;
     }
-
-    public int Health
-    {
-        get { return health; }
-        private set { health = value; }
-    }
-
-    public int MaxHealth
-    {
-        get { return maxHealth; }
-        private set { maxHealth = value; }
-    }
-
-    public int Speed
-    {
-        get { return speed; }
-        private set { speed = value; }
-    }
-
-    public int Thirst
-    {
-        get { return thirst; }
-        private set { thirst = value; }
-    }
-
-    public int Hunger
-    {
-        get { return hunger; }
-        private set { hunger = value; }
-    }
-
-    public int Energy
-    {
-        get { return energy; }
-        private set { energy = value; }
-    }
-
-    public bool IsPoisoned
-    {
-        get { return isPoisoned; }
-        private set { isPoisoned = value; }
-    }
-
-    public bool IsInfected
-    {
-        get { return isInfected; }
-        private set { isInfected = value; }
-    }
-
-
 }
