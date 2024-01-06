@@ -1,18 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class ShootGun : MonoBehaviour
+public abstract class ShootGun
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int CurrentCartridgesCount;
+    public int CartridgesInMagazine;
+    public CartridgeData.Types CartridgesType;
+    public int Magazine; 
+    public float ReoladTime;
+    public int ShootInterval;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
