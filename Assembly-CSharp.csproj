@@ -62,6 +62,8 @@
     <Compile Include="Assets\Classes\Player\PlayerManager.cs" />
     <Compile Include="Assets\Classes\TangibleObjects\Guns\UnifyClasses\Gun.cs" />
     <Compile Include="Assets\Classes\TangibleObjects\Guns\Enum\CartridgeData.cs" />
+    <Compile Include="Assets\Classes\TangibleObjects\Guns\Enum\ScopeData.cs" />
+    <Compile Include="Assets\Classes\TangibleObjects\Guns\Pistols\Glock17.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

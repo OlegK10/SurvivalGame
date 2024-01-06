@@ -11,6 +11,17 @@ public class Player
     private bool isPoisoned;
     private bool isInfected;
 
+    public Player(int health, int speed, int thirst, int hunger, int energy, int maxHealth)
+    {
+        Health = health;
+        Speed = speed;
+        Thirst = thirst;
+        Hunger = hunger;
+        MaxHealth = maxHealth;
+        Energy = energy;
+        IsPoisoned = false;
+        IsInfected = false;
+    }
     public int Health
     {
         get { return health; }
@@ -57,17 +68,5 @@ public class Player
     {
         get { return isInfected; }
         set { isInfected = value; }
-    }
-
-    public Player(int health, int speed, int thirst, int hunger, int energy, int maxHealth)
-    {
-        Health = health;
-        Speed = speed;
-        Thirst = thirst;
-        Hunger = hunger;
-        MaxHealth = maxHealth;
-        Energy = energy;
-        IsPoisoned = false;
-        IsInfected = false;
     }
 }
